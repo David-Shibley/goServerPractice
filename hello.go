@@ -8,7 +8,11 @@ var DB = make(map[string]string)
 
 func main() {
 	r := gin.Default()
+	port := os.Getenv("PORT")
 
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
 	// Ping test
 	r.GET("/ping", func(c *gin.Context) {
 		c.String(200, "pong")
@@ -52,5 +56,5 @@ func main() {
 	})
 
 	// Listen and Server in 0.0.0.0:8080
-	r.Run(":8080")
+	r.Run(":" + port)
 }

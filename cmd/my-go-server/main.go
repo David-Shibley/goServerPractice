@@ -1,10 +1,8 @@
 package main
 
-import (
-	"github.com/David-Shibley/hello/Godeps/_workspace/src/github.com/gin-gonic/gin",
-	"os",
-	"log"
-)
+import "github.com/David-Shibley/hello/Godeps/_workspace/src/github.com/gin-gonic/gin"
+import "os"
+import "log"
 
 var DB = make(map[string]string)
 
